@@ -1,0 +1,1839 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+  <title>Potentia Market | The Future Is Here</title>
+
+  <!-- SEO -->
+<title>THE POTENTIA MARKET - Drops • Tools • Systems • Hardware</title>
+<meta name="description" content="Where you shop for Power not Products">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:title" content="THE POTENTIA MARKET - Drops • Tools • Systems • Hardware">
+<meta property="og:description" content="Where you shop for Power and get control back.">
+<meta property="og:image" content="https://latenslink.co.ke/latenspotentia/assets/img/Picon.png">
+<meta property="og:url" content="https://latenslink.co.ke/latenspotentia/PMarket">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Potentia Market | The Future Is Here">
+<meta name="twitter:description" content="Where you shop for Power not Products">
+<meta name="twitter:image" content="https://latenslink.co.ke/latenspotentia/assets/img/Picon.png">
+
+  <!-- Fonts & libs -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --gold1: #B8860B;
+      --gold2: #FFD700;
+      --bg-dark: rgba(10,10,12,0.6);
+      --panel-dark: rgba(26,26,31,0.35);
+      --card-bg: rgba(38,42,53,0.95);
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      padding:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(rgba(22,24,29,0.65), rgba(19,19,26,0.65)), url('/latenspotentia/assets/img/HeroBg1.jpg') center/cover fixed no-repeat;
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* ---------- Header (fixed, transparent, centered title) ---------- */
+    header.site-header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      height:72px;
+      z-index:60;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 18px;
+      gap:12px;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(10,10,12,0.12), rgba(10,10,12,0.06));
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    /* left / right items */
+    .header-left, .header-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:120px;
+    }
+
+    .brand-logo{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      background:#121217;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 0 14px rgba(255,215,0,0.15);
+      object-fit:cover;
+    }
+
+    .home-btn{
+      color:var(--gold2);
+      text-decoration:none;
+      font-weight:700;
+      padding:6px 10px;
+      border-radius:10px;
+      transition:all .18s;
+    }
+    .home-btn:hover{ transform:translateY(-2px); color:var(--gold1); }
+
+    /* Center title absolute center to ensure true centering */
+    .header-title{
+      position:absolute;
+      left:0; right:0;
+      margin:0 auto;
+      text-align:center;
+      pointer-events:none; /* allow clicks pass-through to left/right */
+    }
+    .header-title h1{
+      font-family: "Orbitron", sans-serif;
+      font-weight:700;
+      font-size:20px;
+      color:var(--gold2);
+      letter-spacing:2px;
+      text-shadow:0 0 18px rgba(184,134,11,0.18);
+      margin:0;
+    }
+    .header-title .sub{
+      display:block;
+      font-size:11px;
+      color:rgba(255,255,255,0.65);
+      margin-top:2px;
+      font-weight:600;
+    }
+
+    /* ---------- Section Nav (fixed narrow pipe with treadmill) ---------- */
+    nav.section-nav{
+      position:fixed;
+      top:72px; /* directly below header */
+      left:0;
+      right:0;
+      height:64px;
+      z-index:50;
+      padding:8px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(10,10,12,0.06), rgba(10,10,12,0.03));
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      overflow:hidden;
+    }
+
+    /* treadmill viewport (narrow pipe / cylinder) */
+    .tread-viewport{
+      width:min(1200px,100%);
+      max-width:1200px;
+      height:48px;
+      border-radius:9999px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: inset 0 0 22px rgba(0,0,0,0.45);
+      padding:6px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    /* inner scroll track */
+    .tread-track{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      will-change:transform;
+      /* auto scroll animation */
+      animation:scroll-left 18s linear infinite;
+    }
+
+    /* prevent hover pause on mobile: only pause when hovered on desktop */
+    .tread-viewport:hover .tread-track{ animation-play-state:paused; }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-40%); } /* adjust to taste */
+    }
+
+    .tread-elem{
+      white-space:nowrap;
+      padding:10px 16px;
+      background: rgba(26,26,33,0.55);
+      border-radius:9999px;
+      color:var(--gold2);
+      font-weight:700;
+      font-size:13px;
+      border:1px solid rgba(255,215,0,0.07);
+      box-shadow:0 4px 24px rgba(0,0,0,0.35);
+      transition:transform .12s;
+    }
+    .tread-elem:hover{ transform:translateY(-4px); background:rgba(40,40,48,0.7); }
+
+    /* ---------- Main content spacing so cards scroll UNDER the fixed nav ---------- */
+    main.content{
+      padding-top: 152px; /* header (72) + nav (64) + spacing */
+      padding-left:16px;
+      padding-right:16px;
+      padding-bottom:80px;
+    }
+
+    /* ---------- Grid: 3 columns default, responsive down ---------- */
+    .drops-grid{
+      display:grid;
+      grid-template-columns: repeat(1, minmax(0,1fr));
+      gap:28px;
+      max-width:1200px;
+      margin:0 auto;
+    }
+    @media(min-width:640px){ .drops-grid{ grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width:1024px){ .drops-grid{ grid-template-columns: repeat(2, 1fr); } }
+
+    /* Card */
+    .drop-card{
+      position:relative
+      background: var(--card-bg);
+      border-radius:18px;
+      padding:26px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      border:1px solid rgba(255,255,255,0.04);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      transition:transform .18s, box-shadow .18s;
+      min-height:260px;
+    }
+    .drop-card:hover{ transform:translateY(-8px); box-shadow: 0 18px 46px rgba(0,0,0,0.7); }
+
+    .drop-title{
+      font-size:1.45rem;
+      font-weight:800;
+      color:var(--gold2);
+      text-shadow:0 0 10px rgba(184,134,11,0.15);
+      letter-spacing: -0.5px;
+    }
+    .drop-desc{ color:rgba(255,255,255,0.92); font-size:1rem; line-height:1.35; }
+
+    .drop-actions{ margin-top:auto; display:flex; gap:10px; align-items:center; }
+
+.drop-price-tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: linear-gradient(90deg, var(--gold1), var(--gold2));
+  color: #000 !important;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(184,134,11,0.25);
+  z-index: 10;
+}
+
+
+    
+    .btn-gold{
+      background: linear-gradient(90deg, var(--gold1) 0%, var(--gold2) 100%);
+      color:#111;
+      font-weight:800;
+      padding:10px 14px;
+      border-radius:12px;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 6px 20px rgba(184,134,11,0.12);
+    }
+    .btn-ghost{
+      background:transparent;
+      color:var(--gold2);
+      border:1px solid rgba(255,215,0,0.08);
+      padding:8px 12px;
+      border-radius:10px;
+      cursor:pointer;
+    }
+/* Force zoomed-out view and multiple cards on small screens */
+@media (max-width: 600px) {
+  html {
+    font-size: 12px; /* scales everything down */
+  }
+  .drops-grid {
+    grid-template-columns: repeat(3, 1fr) !important; /* 2 cards side by side on mobile */
+    gap: 16px;
+  }
+  .drop-card {
+    padding: 16px;
+    min-height: 200px;
+  }
+  header.site-header {
+    height: 60px;
+    padding: 0 10px;
+  }
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+  .header-title h1 {
+    font-size: 16px;
+  }
+  .header-title .sub {
+    font-size: 9px;
+  }
+}
+
+   .option-list {
+      margin: 0 0 1.5rem 0;
+      padding: 0;
+      list-style: none;
+    }
+    .option-list li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1em;
+    }
+    .option-list svg {
+      flex-shrink: 0;
+      color: #FFD700;
+      width: 1.7em;
+      height: 1.7em;
+      margin-right: 0.5em;
+    }
+    .option-link {
+      color: #FFD700;
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color 0.16s;
+    }
+    .option-link:hover {
+      color: #B8860B;
+      text-decoration: underline;
+     /* ---------- Modal (popup) ---------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 8, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal {
+  background: linear-gradient(180deg, rgba(22, 22, 24, 0.98), rgba(18, 18, 20, 0.99));
+  border-radius: 14px;
+  max-width: 920px;
+  width: 100%;
+  padding: 22px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: auto;
+  max-height: 88vh;
+}
+
+.modal .modal-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.modal .modal-head h2 {
+  margin: 0;
+  color: var(--gold2);
+  font-weight: 800;
+  font-family: "Orbitron", sans-serif;
+}
+
+.modal .modal-body {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  font-size: 0.98rem;
+}
+
+.modal .modal-close {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-left">
+      <img src="/latenspotentia/assets/img/Picon.jpg" alt="Potentia" class="brand-logo">
+      <!-- keep text hidden here, center handles title -->
+    </div>
+
+    <!-- absolute-centered title -->
+    <div class="header-title" aria-hidden="true">
+      <h1>THE POTENTIA MARKET</h1>
+      <span class="sub">Drops • Tools • Systems • Hardware</span>
+    </div>
+
+    <div class="header-right">
+      <a class="home-btn" href="/latenspotentia/PMarket/payments.html" title="Back home">Buy<br>Me<br>A Coffee</a>
+    </div>
+  </header>
+
+<!-- SECTION NAV (treadmill pipe) -->
+    <nav class="section-nav" role="navigation" aria-label="Potentia sections">
+    <div class="tread-viewport">
+      <div class="tread-track" id="treadTrack">
+        <!-- duplicate set to create seamless scroll -->
+        <a href="scripts.html" class="tread-elem">SCRIPTS</a>
+        <a href="hardware.html" class="tread-elem">HARDWARE</a>
+        <a href="documents.html" class="tread-elem">DOCUMENTS</a>
+        <a href="systems.html" class="tread-elem">SYSTEMS</a>
+        <a href="latenslink.html" class="tread-elem">LATENSLINK</a>
+        <a href="services.html" class="tread-elem">SERVICES</a>
+        <a href="bots.html" class="tread-elem">BOTS</a>
+
+        <!-- repeat for smoother loop -->
+        <a href="scripts.html" class="tread-elem">SCRIPTS</a>
+        <a href="hardware.html" class="tread-elem">HARDWARE</a>
+        <a href="documents.html" class="tread-elem">DOCUMENTS</a>
+        <a href="systems.html" class="tread-elem">SYSTEMS</a>
+        <a href="latenslink.html" class="tread-elem">LATENSLINK</a>
+        <a href="services.html" class="tread-elem">SERVICES</a>
+        <a href="bots.html" class="tread-elem">BOTS</a>
+      </div>
+    </div>
+        </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <section class="drops-grid" id="dropsGrid">
+      <!-- CARD TEMPLATE: duplicate/modify as needed. Each card must include a data-modal-content attribute. -->
+      <article class="drop-card" data-aos="zoom-in">
+        <div style="display:flex;align-items:center;gap:12px">
+          <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="logo">
+          <div>
+            <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.65)">The Future Is Here</div>
+          </div>
+        </div>
+
+        <div class="drop-title">Welcome To The Market</div>
+        <div class="drop-desc">The Potenta Market is live. Choose your preferred way to receive drops and get started.</div>
+
+        <ul class="option-list" style="margin:0;padding:0;list-style:none;">
+          <li style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 8v4l3 3"></path><circle cx="12" cy="12" r="10"></circle></svg>
+            <a class="option-link" href="https://t.me/Potentiabot_bot" target="_blank">Get drops via Telegram Bot (PotentiaBot)</a>
+          </li>
+          <li style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9-4 9 4-9 4-9-4zm0 0v6c0 5.25 6.75 9 9 9s9-3.75 9-9V7"></path></svg>
+            <a class="option-link" href="https://github.com/LatensTech/Latens-Technology-/" target="_blank">Clone from GitHub</a>
+          </li>
+          <li style="display:flex;gap:10px;align-items:center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v16m8-8H4"></path></svg>
+            <a class="option-link" href="" download>Download Here In The Market</a>
+          </li>
+        </ul>
+
+        <div class="drop-actions">
+          <button class="btn-gold" data-modal-title="Universe™ Drop" data-modal-content="<p><strong>Release:</strong> Universe v1.0</p><p><em>What’s inside:</em></p><ul><li>Telegram autoresponder bot</li><li>Sample scripts & README</li><li>Install instructions</li></ul><p>Drop manual & usage instructions included.</p>">Details</button>
+
+          <a class="btn-ghost" href="https://latenslink.co.ke/latenspotentia" target="_blank">Back to Main</a>
+        </div>
+      </article>
+
+ <!-- DROP CARD: UnlockPotentia with Termux -->
+<article class="drop-card" data-aos="zoom-in">
+  <div style="display:flex;align-items:center;gap:12px">
+          <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="logo">
+          <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Install Termux</div>
+    </div>
+  </div>
+  <div class="drop-title">UnlockPotentia with Termux</div>
+  <div class="drop-desc">Download Termux on Android and Unlock Your Power Today.</div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="UnlockPotentia with Termux"
+      data-popup-content="
+        <p><strong>Why Termux?</strong></p>
+        <p>Termux turns your phone into a command center. No laptop, no excuses. It’s how we deploy scripts, extract leads, and run ops silently.</p>
+        <p><strong>What’s Inside:</strong></p>
+        <ul>
+          <li>Why Termux is essential for Potentia ops</li>
+          <li>How to install Termux (step-by-step)</li>
+          <li>First-time setup: storage, packages, shell</li>
+          <li>Deploying your first sleeper cell</li>
+        </ul>
+        <p>This guide is built for non-tech natives. If you can tap, you can deploy.</p>
+        <p><strong>Format:</strong> PDF | Language: English | Size: ~1.2MB</p>
+      "
+      data-popup-action="https://youtube.com/shorts/il_awhjv2CI?si=XlHRmDA8QAprWnfW">
+      Details
+    </button>
+    <a class="btn-ghost" href="https://f-droid.org/repo/com.termux_1022.apk" target="_blank">Download Termux</a>
+  </div>
+</article>
+
+
+<!-- POTENTIA Hardware DROP CARD -->
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">12,500 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Netgear logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Netgear Switch Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Netgear GS108Ev3</div>
+  <div class="drop-desc">
+    8-port Gigabit Smart Managed Plus switch with VLAN and QoS, ideal for small offices or home labs.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/netgear.png" alt="Netgear Switch" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Netgear GS108Ev3"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Smart Managed Plus switch for small business or home networks.</p>
+        <ul>
+          <li>8 Gigabit ports</li>
+          <li>VLAN support & QoS</li>
+          <li>Web-based management</li>
+          <li>Fanless, silent operation</li>
+          <li>Easy plug-and-play setup</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Purchase → Connect → Configure via web interface → Expand your network instantly.</p>
+        <p><strong>Format:</strong> Physical hardware | Plug & play</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/NetgearSwitch.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+ <article class="drop-card" data-aos="zoom-in">
+  <div class="drop-price-tag">15,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Ubiquiti logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Ubiquiti Access Point Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Ubiquiti UniFi U6-LR</div>
+  <div class="drop-desc">
+    Long-range WiFi 6 access point for enterprise and home use, delivering fast, stable wireless connectivity.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/ubiquiti.png" alt="Ubiquiti AP" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Ubiquiti UniFi U6-LR"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>High-performance long-range WiFi 6 access point for stable wireless coverage.</p>
+        <ul>
+          <li>WiFi 6 support</li>
+          <li>Up to 300+ devices connected</li>
+          <li>Managed via UniFi Controller</li>
+          <li>Seamless roaming & mesh networking</li>
+          <li>Enterprise-grade performance</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Purchase → Mount → Connect → Manage via UniFi App → Enjoy high-speed WiFi.</p>
+        <p><strong>Format:</strong> Physical hardware | Plug & play</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/UbiquitiAP.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+      </article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">22,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="TP-Link logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">TP-Link Firewall Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">TP-Link SafeStream TL-R600VPN</div>
+  <div class="drop-desc">
+    Compact VPN router with built-in firewall, perfect for small offices needing secure internet and reliable connections.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/tplink.png" alt="TP-Link Firewall" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="TP-Link TL-R600VPN"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>VPN router with firewall, ensuring secure remote connections and network stability.</p>
+        <ul>
+          <li>Supports up to 10 VPN tunnels</li>
+          <li>4 Gigabit LAN ports</li>
+          <li>SPI Firewall protection</li>
+          <li>Easy web-based setup</li>
+          <li>Reliable small office solution</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Purchase → Connect → Configure VPN & firewall → Secure your network instantly.</p>
+        <p><strong>Format:</strong> Physical hardware | Plug & play</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/TPLinkFirewall.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">18,500 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="MikroTik logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">MikroTik Switch Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">MikroTik CRS125-24G-1S</div>
+  <div class="drop-desc">
+    Managed 24-port Gigabit switch with SFP slot, perfect for growing businesses and complex network setups.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/mikrotik.png" alt="MikroTik Switch" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="MikroTik CRS125-24G-1S"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>24-port managed Gigabit switch with one SFP port, ideal for professional networking.</p>
+        <ul>
+          <li>24 Gigabit RJ45 ports</li>
+          <li>1 SFP port for fiber uplink</li>
+          <li>Layer 3 features & VLAN support</li>
+          <li>RouterOS powered</li>
+          <li>Web & WinBox management</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Purchase → Connect → Configure VLANs → Expand your network efficiently.</p>
+        <p><strong>Format:</strong> Physical hardware | Plug & play ready</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/MikroTikSwitch.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">45,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Cisco logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Cisco Router Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Cisco RV340 Dual WAN Router</div>
+  <div class="drop-desc">
+    Reliable dual WAN router for small businesses, offering VPN support, advanced security features, and high-speed connectivity.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/cisco.png" alt="Cisco Router" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Cisco RV340 Router"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>A small business router with dual WAN, VPN support, and enterprise-grade security.</p>
+        <ul>
+          <li>Dual WAN ports for redundancy</li>
+          <li>4 Gigabit LAN ports</li>
+          <li>VPN for secure remote access</li>
+          <li>Firewall & content filtering</li>
+          <li>Easy setup with web-based interface</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Purchase → Plug in → Configure WAN & LAN → Enjoy secure, fast connectivity.</p>
+        <p><strong>Format:</strong> Physical hardware | Ready to deploy</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/CiscoRouter.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">120,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Dell logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Dell Server Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Dell PowerEdge T440</div>
+  <div class="drop-desc">
+    Powerful rack/tower server with dual-socket scalability, ideal for virtualization and databases.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/DellT440.png" alt="Dell Server" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Dell PowerEdge T440"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Enterprise-class Dell server for small businesses and data centers.</p>
+        <ul>
+          <li>Intel Xeon Scalable CPUs</li>
+          <li>Up to 512GB RAM</li>
+          <li>Flexible storage bays</li>
+          <li>iDRAC9 remote management</li>
+          <li>Supports VMware, Hyper-V, Linux</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Rack/tower deploy → Install hypervisor → Run VMs, apps, or databases seamlessly.</p>
+        <p><strong>Format:</strong> Physical hardware | Rack/tower server</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/DellServer.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">78,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Fortinet logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Fortinet Firewall Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">FortiGate 60F</div>
+  <div class="drop-desc">
+    Next-generation firewall delivering advanced threat protection and secure SD-WAN.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/FortiGate60F.png" alt="Fortinet Firewall" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="FortiGate 60F"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Compact next-gen firewall for SMEs with enterprise-grade protection.</p>
+        <ul>
+          <li>Advanced threat protection</li>
+          <li>Integrated SD-WAN</li>
+          <li>High-speed VPN</li>
+          <li>Easy-to-use FortiOS</li>
+          <li>Throughput up to 10 Gbps</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Deploy at network edge → Configure policies in FortiOS → Protect against cyber threats.</p>
+        <p><strong>Format:</strong> Physical hardware | Security appliance</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/FortiGate.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+ <article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">18,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Ubiquiti logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Ubiquiti AP Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Ubiquiti UniFi 6 Lite</div>
+  <div class="drop-desc">
+    Dual-band WiFi 6 Access Point with sleek design and centralized UniFi management.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/Ubiquiti6Lite.png" alt="Ubiquiti Access Point" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Ubiquiti UniFi 6 Lite"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>WiFi 6 AP for offices, homes, and enterprises, managed via UniFi Controller.</p>
+        <ul>
+          <li>Dual-band WiFi 6 (2.4GHz & 5GHz)</li>
+          <li>Speeds up to 1.5 Gbps</li>
+          <li>PoE powered</li>
+          <li>Ceiling/wall mountable</li>
+          <li>Centralized UniFi management</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Install → Power via PoE → Adopt in UniFi Controller → Provide blazing fast WiFi.</p>
+        <p><strong>Format:</strong> Physical hardware | Ceiling/wall mount</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/UbiquitiAP.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+ </article>     
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">45,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Cisco logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Cisco Router Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Cisco ISR 4321</div>
+  <div class="drop-desc">
+    Enterprise-class Integrated Services Router with advanced WAN, VPN, and security features.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/CiscoISR4321.png" alt="Cisco Router" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Cisco ISR 4321"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>High-performance Cisco Integrated Services Router for SMB and enterprises.</p>
+        <ul>
+          <li>WAN/LAN routing</li>
+          <li>Built-in VPN and security</li>
+          <li>Modular slots for expansion</li>
+          <li>Throughput up to 50 Mbps</li>
+          <li>Ideal for branch offices</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Deploy as your primary router, configure via Cisco IOS, and secure your network edge.</p>
+        <p><strong>Format:</strong> Physical hardware | Rack-mountable</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/CiscoRouter.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">78,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Dell logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Dell Workstation Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Dell Precision T7820</div>
+  <div class="drop-desc">
+    High-performance workstation designed for developers, engineers, and creators needing raw power.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/DellT7820.png" alt="Dell Workstation" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Dell Precision T7820"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Professional workstation with powerful CPU & GPU for intensive workloads.</p>
+        <ul>
+          <li>Intel Xeon processor</li>
+          <li>32GB DDR4 RAM</li>
+          <li>NVIDIA Quadro RTX GPU</li>
+          <li>Multiple storage bays</li>
+          <li>ISV certified performance</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Unbox → Install OS/software → Run demanding apps like CAD, AI, or rendering without lag.</p>
+        <p><strong>Format:</strong> Physical hardware | Workstation tower</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/DellWorkstation.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">95,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="HP logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">HP Server Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">HP ProLiant DL380 Gen10</div>
+  <div class="drop-desc">
+    Rack-mounted enterprise server with Intel Xeon processors and RAID storage support.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/HPGen10.png" alt="HP Server" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="HP ProLiant DL380 Gen10"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Enterprise-grade rack server for compute, storage, and virtualization workloads.</p>
+        <ul>
+          <li>2x Intel Xeon Silver CPUs</li>
+          <li>64GB ECC DDR4 RAM</li>
+          <li>RAID storage controller</li>
+          <li>Virtualization-ready</li>
+          <li>Redundant power supplies</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Rack → Install OS/VMware → Configure → Deploy as your core infrastructure node.</p>
+        <p><strong>Format:</strong> Physical hardware | Rack server</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/HPServer.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">22,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Mikrotik logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Mikrotik Firewall Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Mikrotik CCR1009</div>
+  <div class="drop-desc">
+    Cloud Core Router with firewall, VPN, and high-performance routing for SMB and enterprise setups.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/MikrotikCCR1009.png" alt="Mikrotik Router" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Mikrotik CCR1009"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Firewall + Router + VPN concentrator in one unit.</p>
+        <ul>
+          <li>9 Gigabit Ethernet ports</li>
+          <li>Firewall rules & traffic shaping</li>
+          <li>Supports IPsec VPN</li>
+          <li>Customizable RouterOS firmware</li>
+          <li>Perfect for ISPs or labs</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Install → Configure firewall rules → Optimize routing → Secure your network backbone.</p>
+        <p><strong>Format:</strong> Physical hardware | Enterprise firewall</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/MikrotikFirewall.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">38,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Cisco logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Cisco Router Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Cisco ISR 4321</div>
+  <div class="drop-desc">
+    Integrated Services Router with advanced security, VPN, and WAN optimization features. Ideal for SMEs.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/CiscoISR4321.png" alt="Cisco Router" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Cisco ISR 4321"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Enterprise-grade router for secure and scalable connectivity.</p>
+        <ul>
+          <li>2x Gigabit WAN/LAN ports</li>
+          <li>Built-in VPN & firewall</li>
+          <li>Advanced QoS & routing protocols</li>
+          <li>Modular for WAN/LTE expansion</li>
+          <li>Secure remote access</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Deploy → Configure security policies → Enable VPN → Power enterprise networks with ease.</p>
+        <p><strong>Format:</strong> Physical hardware | Enterprise-ready</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/CiscoRouter.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">28,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Cisco logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Cisco Router Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Cisco RV340 Dual WAN</div>
+  <div class="drop-desc">
+    Business-class VPN router with dual WAN ports, built-in firewall, and advanced security for SMBs.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/cisco.png" alt="Cisco Router" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Cisco RV340"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Dual WAN VPN router with enterprise-grade performance.</p>
+        <ul>
+          <li>Dual Gigabit WAN for load balancing/failover</li>
+          <li>Built-in firewall & advanced security</li>
+          <li>50+ VPN tunnels supported</li>
+          <li>Web & mobile management</li>
+          <li>Perfect for SMBs & branch offices</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Purchase → Connect WAN links → Configure security policies → Deploy VPNs for secure remote access.</p>
+        <p><strong>Format:</strong> Physical hardware | Enterprise-ready</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/CiscoRouter.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">18,500 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="TP-Link logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">TP-Link Firewall Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">TP-Link SafeStream TL-ER6120</div>
+  <div class="drop-desc">
+    Gigabit multi-WAN VPN firewall router for businesses that need reliable internet & strong security.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/Tplink02.png" alt="TP-Link Firewall" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="TP-Link TL-ER6120"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Business-grade VPN firewall with multiple WAN support.</p>
+        <ul>
+          <li>Dual Gigabit WAN with load balancing</li>
+          <li>Up to 100 IPsec VPN tunnels</li>
+          <li>Strong firewall & DoS protection</li>
+          <li>Bandwidth management</li>
+          <li>Rackmount design</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Purchase → Rack it → Configure WAN & VPN policies → Protect your office network instantly.</p>
+        <p><strong>Format:</strong> Physical hardware | Security-focused</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/TPLinkFirewall.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">75,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Dell logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Dell Server Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Dell PowerEdge T40</div>
+  <div class="drop-desc">
+    Entry-level tower server designed for virtualization, file storage, and small business workloads.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/Dell002.png" alt="Dell PowerEdge T40" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Dell PowerEdge T40"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Reliable entry-level tower server for SMBs and labs.</p>
+        <ul>
+          <li>Intel Xeon E-2224G CPU</li>
+          <li>8GB DDR4 RAM (expandable)</li>
+          <li>1TB HDD storage</li>
+          <li>Supports virtualization (VMware, Hyper-V, Proxmox)</li>
+          <li>Efficient & quiet for office/lab use</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Purchase → Rack or desk setup → Install your OS/VM software → Scale workloads with ease.</p>
+        <p><strong>Format:</strong> Physical hardware | Server-grade</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/DellServer.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<!-- 🔹 Dell Server Drop -->
+<article class="drop-card" data-aos="zoom-in">
+  <div class="drop-price-tag">120,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Dell logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Dell Server Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Dell PowerEdge T440</div>
+  <div class="drop-desc">
+    Powerful rack/tower server with dual-socket scalability, ideal for virtualization and databases.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/DellT440.png" alt="Dell Server" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Dell PowerEdge T440"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Enterprise-class Dell server for small businesses and data centers.</p>
+        <ul>
+          <li>Intel Xeon Scalable CPUs</li>
+          <li>Up to 512GB RAM</li>
+          <li>Flexible storage bays</li>
+          <li>iDRAC9 remote management</li>
+          <li>Supports VMware, Hyper-V, Linux</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Rack/tower deploy → Install hypervisor → Run VMs, apps, or databases seamlessly.</p>
+        <p><strong>Format:</strong> Physical hardware | Rack/tower server</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/DellServer.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+
+<!-- 🔹 Cisco Firewall Drop -->
+<article class="drop-card" data-aos="zoom-in">
+  <div class="drop-price-tag">85,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Cisco logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Cisco Firewall Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Cisco ASA 5506-X</div>
+  <div class="drop-desc">
+    Next-gen firewall with VPN, intrusion prevention, and robust threat defense for SMEs.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/Cisco002.png" alt="Cisco Firewall" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Cisco ASA 5506-X"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Enterprise-grade firewall appliance for network perimeter defense.</p>
+        <ul>
+          <li>Firewall + VPN support</li>
+          <li>IPS/IDS features built-in</li>
+          <li>Cloud-delivered threat intelligence</li>
+          <li>Secure remote access</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Plug into WAN/LAN → Define access policies → Monitor & block threats in real-time.</p>
+        <p><strong>Format:</strong> Physical hardware | Security appliance</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/CiscoFirewall.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+
+<!-- 🔹 Ubiquiti Switch Drop -->
+<article class="drop-card" data-aos="zoom-in">
+  <div class="drop-price-tag">42,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Ubiquiti logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Ubiquiti Switch Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Ubiquiti UniFi Switch 24 PoE</div>
+  <div class="drop-desc">
+    Managed 24-port Gigabit switch with PoE+ for powering APs, cameras, and VoIP phones.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/Ubq002.png" alt="Ubiquiti Switch" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Ubiquiti UniFi Switch 24 PoE"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Cloud-managed network switch for enterprise deployments.</p>
+        <ul>
+          <li>24x Gigabit RJ45 ports</li>
+          <li>802.3af/at PoE+ support</li>
+          <li>1Gb SFP uplink slots</li>
+          <li>UniFi Controller management</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Rack mount → Connect devices → Power APs/phones → Manage via UniFi cloud dashboard.</p>
+        <p><strong>Format:</strong> Physical hardware | Network switch</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/UbiquitiSwitch.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+
+<!-- 🔹 Fortinet Firewall Drop -->
+<article class="drop-card" data-aos="zoom-in">
+  <div class="drop-price-tag">98,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Fortinet logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Fortinet Security Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">FortiGate 60F</div>
+  <div class="drop-desc">
+    Compact NGFW with high-speed threat inspection, SD-WAN, and secure web filtering.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/FortiGate60F.png" alt="FortiGate Firewall" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="FortiGate 60F"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>All-in-one firewall for SMBs requiring speed and layered defense.</p>
+        <ul>
+          <li>NGFW with IPS & antivirus</li>
+          <li>Application control</li>
+          <li>VPN & SD-WAN features</li>
+          <li>FortiGuard cloud security services</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Inline deployment → Configure policies → Enable real-time threat feeds.</p>
+        <p><strong>Format:</strong> Physical hardware | Security firewall</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/FortiGate.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+
+<!-- 🔹 Synology NAS Drop -->
+<article class="drop-card" data-aos="zoom-in">
+  <div class="drop-price-tag">65,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.jpg" class="brand-logo" alt="Synology logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Synology Storage Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Synology DS920+</div>
+  <div class="drop-desc">
+    4-bay NAS for centralized storage, backups, and virtualization-ready workloads.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/Synology.png" alt="Synology NAS" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Synology DS920+"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>NAS storage system for SMBs and creators.</p>
+        <ul>
+          <li>4 drive bays (HDD/SSD)</li>
+          <li>Btrfs + RAID support</li>
+          <li>Synology DSM OS</li>
+          <li>VM & Docker support</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Insert drives → Configure RAID → Enable backups, cloud sync, or run apps in containers.</p>
+        <p><strong>Format:</strong> Physical hardware | NAS storage</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/SynologyNAS.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+  </article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">28,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.png" class="brand-logo" alt="Ubiquiti logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Ubiquiti WiFi Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Ubiquiti UniFi 6 Pro</div>
+  <div class="drop-desc">
+    Wi-Fi 6 access point for high-density environments with blazing-fast wireless speeds.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/Ubq003.png" alt="Ubiquiti Access Point" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Ubiquiti UniFi 6 Pro"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Enterprise-grade wireless access point with Wi-Fi 6 for speed and coverage.</p>
+        <ul>
+          <li>Wi-Fi 6 (802.11ax)</li>
+          <li>Up to 5.3 Gbps throughput</li>
+          <li>Seamless UniFi Controller integration</li>
+          <li>Ceiling/wall mountable</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Deploy in office/campus → Connect to UniFi controller → Deliver fast & stable Wi-Fi.</p>
+        <p><strong>Format:</strong> Physical hardware | Wireless AP</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/UbiquitiAP.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">75,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.png" class="brand-logo" alt="Synology logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Synology Storage Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Synology DS920+</div>
+  <div class="drop-desc">
+    High-performance NAS for backups, file storage, and private cloud setups.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/Synology.png" alt="Synology NAS" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Synology DS920+"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Compact NAS storage for SMBs, content creators, and home labs.</p>
+        <ul>
+          <li>Quad-core CPU, 4GB RAM (expandable)</li>
+          <li>4 drive bays (expandable to 9)</li>
+          <li>Btrfs file system with snapshot support</li>
+          <li>Synology Hybrid RAID</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Plug in drives → Configure DSM OS → Centralize your storage & backups.</p>
+        <p><strong>Format:</strong> Physical hardware | Network-attached storage</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/SynologyNAS.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">110,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.png" class="brand-logo" alt="Fortinet logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Fortinet Firewall Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">FortiGate 100F</div>
+  <div class="drop-desc">
+    Next-gen firewall with advanced threat protection for enterprise networks.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/Fortigate002.png" alt="Fortinet Firewall" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="FortiGate 100F"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Enterprise firewall with SD-WAN and deep inspection for secure operations.</p>
+        <ul>
+          <li>20 Gbps firewall throughput</li>
+          <li>IPS, VPN, Anti-malware</li>
+          <li>Secure SD-WAN built-in</li>
+          <li>Ideal for medium/large businesses</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Deploy at network edge → Filter, inspect, and secure all incoming/outgoing traffic.</p>
+        <p><strong>Format:</strong> Physical hardware | Security appliance</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/FortiGateFirewall.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+      
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">85,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.png" class="brand-logo" alt="Cisco logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Cisco Router Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Cisco ISR 4331 Router</div>
+  <div class="drop-desc">
+    Secure, high-performance router for branch connectivity and WAN optimization.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/Cisco004.png" alt="Cisco Router" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Cisco ISR 4331 Router"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Enterprise-class integrated services router for secure WAN and cloud access.</p>
+        <ul>
+          <li>3 Gbps performance</li>
+          <li>Integrated security and VPN</li>
+          <li>Modular slots for expansion</li>
+          <li>Ideal for SD-WAN deployment</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Plug into your branch network → Configure WAN/LAN → Secure & optimize traffic flow.</p>
+        <p><strong>Format:</strong> Networking hardware | Branch router</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/CiscoRouter.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+
+<article class="drop-card" data-aos="zoom-in">
+
+  <div class="drop-price-tag">85,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.png" class="brand-logo" alt="Cisco logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Cisco Router Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Cisco ISR 4451-X</div>
+  <div class="drop-desc">
+    Enterprise branch router with advanced security and WAN optimization features.
+  </div>
+  <div style="margin-top:20px;">
+  <img src="/latenspotentia/assets/img/Cisco003.png" alt="Cisco Router" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Cisco ISR 4451-X"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>High-performance router for branch and enterprise WAN connectivity.</p>
+        <ul>
+          <li>Multi-core CPU for fast throughput</li>
+          <li>Integrated VPN and firewall</li>
+          <li>Supports MPLS & SD-WAN</li>
+          <li>Up to 2 Gbps performance</li>
+          <li>Redundant power supply options</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Plug into enterprise WAN → Configure routing policies → Secure and optimize traffic.</p>
+        <p><strong>Format:</strong> Physical hardware | Rack router</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/CiscoRouter.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<!-- Drop 1: HP ProLiant Server -->
+<article class="drop-card" data-aos="zoom-in">
+  <div class="drop-price-tag">145,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assetborderPicon.png" class="brand-logo" alt="HP logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">HP Server Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">HP ProLiant DL380 Gen10</div>
+  <div class="drop-desc">
+    Trusted enterprise server built for performance, scalability, and virtualization at scale.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/HPGen10.png" alt="HP Server" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="HP ProLiant DL380 Gen10"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Enterprise-grade rack server for data centers and high-performance workloads.</p>
+        <ul>
+          <li>Intel Xeon Scalable processors</li>
+          <li>Up to 3TB DDR4 RAM</li>
+          <li>Advanced iLO management</li>
+          <li>Redundant power supplies</li>
+          <li>VMware & Hyper-V certified</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Deploy in a rack → run virtualization, big data apps, or mission-critical workloads.</p>
+        <p><strong>Format:</strong> Physical hardware | Rack server</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/HPServer.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<!-- Drop 2: Cisco Router -->
+<article class="drop-card" data-aos="zoom-in">
+  <div class="drop-price-tag">85,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.png" class="brand-logo" alt="Cisco logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Cisco Router Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Cisco ISR 4331</div>
+  <div class="drop-desc">
+    High-performance integrated services router designed for secure branch connectivity.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/Cisco004.png" alt="Cisco Router" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Cisco ISR 4331"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Next-gen router for enterprise branch offices and SMBs.</p>
+        <ul>
+          <li>100 Mbps to 300 Mbps throughput</li>
+          <li>Integrated security (VPN, firewall)</li>
+          <li>Advanced QoS & WAN optimization</li>
+          <li>Expandable with modules</li>
+          <li>IOS XE software</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Deploy at the branch edge → secure WAN access + advanced routing.</p>
+        <p><strong>Format:</strong> Physical hardware | Enterprise router</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/CiscoRouter.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<!-- Drop 3: Ubiquiti Access Point -->
+<article class="drop-card" data-aos="zoom-in">
+  <div class="drop-price-tag">19,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.png" class="brand-logo" alt="Ubiquiti logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Wi-Fi Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Ubiquiti UniFi UAP-AC-PRO</div>
+  <div class="drop-desc">
+    Business-class dual-band Wi-Fi access point with seamless roaming and centralized control.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/Ubq004.png" alt="Ubiquiti AP" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Ubiquiti UniFi UAP-AC-PRO"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>High-performance wireless access point for offices, schools, or hotels.</p>
+        <ul>
+          <li>802.11ac dual-band Wi-Fi</li>
+          <li>3x3 MIMO antennas</li>
+          <li>PoE powered</li>
+          <li>Seamless roaming</li>
+          <li>UniFi Controller software</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Mount on ceiling/wall → PoE connect → manage Wi-Fi networks via UniFi app.</p>
+        <p><strong>Format:</strong> Physical hardware | Access point</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/UnifiAP.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+
+<!-- Drop 4: Fortinet Firewall -->
+<article class="drop-card" data-aos="zoom-in">
+  <div class="drop-price-tag">110,000 KES</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="/latenspotentia/assets/img/Picon.png" class="brand-logo" alt="Fortinet logo">
+    <div>
+      <div style="font-weight:800;color:var(--gold2);font-family:'Orbitron',sans-serif">Potentia</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65)">Firewall Drop</div>
+    </div>
+  </div>
+  <div class="drop-title">Fortinet FortiGate 100F</div>
+  <div class="drop-desc">
+    Next-gen firewall with high throughput and built-in SD-WAN for secure enterprise networks.
+  </div>
+  <div style="margin-top:20px;">
+    <img src="/latenspotentia/assets/img/fortinet-fw.png" alt="Fortinet Firewall" style="max-width:100%;border-radius:12px;">
+  </div>
+  <div class="drop-actions">
+    <button class="btn-gold"
+      data-popup-title="Fortinet FortiGate 100F"
+      data-popup-content="
+        <p><strong>What It Is:</strong></p>
+        <p>Security appliance for mid-size to large businesses.</p>
+        <ul>
+          <li>10 Gbps firewall throughput</li>
+          <li>IPS, VPN, web filtering</li>
+          <li>Integrated SD-WAN</li>
+          <li>High availability support</li>
+          <li>Centralized FortiManager control</li>
+        </ul>
+        <p><strong>How It Works:</strong></p>
+        <p>Deploy at network edge → enforce policies + block threats in real-time.</p>
+        <p><strong>Format:</strong> Physical hardware | Firewall appliance</p>
+      "
+      data-popup-action="/latenspotentia/PMarket/FortiGate.html">
+      Details
+    </button>
+    <a class="btn-ghost" href="/latenspotentia/PMarket/payments.html" target="_blank">Buy Now</a>
+  </div>
+</article>
+      
+      <!-- add as many cards as you want; grid will handle the layout -->
+    </section>
+    <div class="mt-10 text-xs text-gray-400 tracking-wide text-center opacity-80">
+    </div>
+      <ul class="option-list">
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3"></path><circle cx="12" cy="12" r="10"></circle></svg>
+          <a class="option-link" href="/latenspotentia/PMarket/pdfs.html" target="_blank">Take Your Time To Learn. PDFs Guides are available here.</a>
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4zm0 0v6c0 5.25 6.75 9 9 9s9-3.75 9-9V7"></path></svg>
+          <a class="option-link" href="https://t.me/Potentiabot_bot" target="_blank">Need Help? Step by Step Guidance? Then Don't Be Shy... <br>DM us on Telegram.We are Here To Help.</a>
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"></path></svg>
+          <a class="option-link" href="/latenspotentia/PMarket/files/Latens Potentia Submission.docx" download>Do You Have an Idea? Crazy? Wild? Impossible? Lets bring it to life...<br>Fill this document, Share your idea and send it to email at the bottom.</a>
+        </li>
+      </ul>
+      <a href="https://latenslink.co.ke/latenspotentia" class="gold-btn mt-5 inline-block">Back To HomePage</a>
+    </div>
+    <div class="mt-10 text-xs text-gray-400 tracking-wide text-center opacity-80">
+      &copy; 2025 Potentia Systems. The Future is Here.<br>
+      Do you have what it takes?<br>
+      <p><a href="mailto:admin@latenslink.co.ke" class="text-gold underline">chief@latenslink.co.ke</a></p>
+    </div>
+  </main>
+<!-- 🔹 Dynamic Popup Modal -->
+<div id="popupBackdrop" class="fixed inset-0 z-[9999] bg-black/80 hidden items-center justify-center px-4">
+  <div class="bg-[#1a1a1f] rounded-xl max-w-2xl w-full p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+    <div class="flex justify-between items-center mb-4">
+      <h2 id="popupTitle" class="text-yellow-400 text-xl font-bold">Title</h2>
+      <button onclick="closePopup()" class="text-yellow-300 text-2xl font-bold">&times;</button>
+    </div>
+    <div id="popupContent" class="text-gray-200 text-sm leading-relaxed">
+      <!-- dynamic content -->
+    </div>
+    <div class="flex justify-end gap-4 mt-6">
+      <button onclick="closePopup()" class="btn-ghost">Close</button>
+      <a id="popupAction" href="#" class="btn-gold hidden">Download / Action</a>
+    </div>
+  </div>
+</div>
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 520 });
+
+    // 🔹 Dynamic Popup Logic
+const popupBackdrop = document.getElementById('popupBackdrop');
+const popupTitle = document.getElementById('popupTitle');
+const popupContent = document.getElementById('popupContent');
+const popupAction = document.getElementById('popupAction');
+
+function openPopup(title, html, actionUrl) {
+  popupTitle.textContent = title || 'Details';
+  popupContent.innerHTML = html || '<p>No content provided.</p>';
+  if (actionUrl) {
+    popupAction.href = actionUrl;
+    popupAction.classList.remove('hidden');
+  } else {
+    popupAction.classList.add('hidden');
+  }
+  popupBackdrop.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePopup() {
+  popupBackdrop.classList.add('hidden');
+  document.body.style.overflow = '';
+  popupContent.innerHTML = '';
+}
+
+// Attach to buttons with data attributes
+document.querySelectorAll('.btn-gold[data-popup-title]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const title = btn.getAttribute('data-popup-title');
+    const content = btn.getAttribute('data-popup-content');
+    const action = btn.getAttribute('data-popup-action');
+    openPopup(title, content, action);
+  });
+});
+
+    /* ---------- Accessibility: keyboard close ---------- */
+    window.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape') closeModal();
+    });
+
+    /* ---------- Improve treadmill smoothness: duplicate track width check ---------- */
+    // Ensure animation distance adapts to track width for smoother loop (optional)
+    (function adaptTread(){
+      const track = document.getElementById('treadTrack');
+      if(!track) return;
+      // If track width is less than viewport we duplicate content (done in markup), this is an additional safety.
+      // No manual resizing required; animation keyframes set to -40% which works fine with the repeats.
+    })();
+
+    /* ---------- Simple mobile fix: reduce transform scale if viewport small ---------- */
+    (function mobileZoomFix(){
+      // if content feels zoomed-in on some mobile browsers we can force viewport scale: already set in meta
+      // Additional fallback: reduce base font-size on tiny screens
+      if(window.innerWidth < 360){
+        document.documentElement.style.fontSize = '14px';
+      }
+    })();
+
+  </script>
+</body>    
+      
+          

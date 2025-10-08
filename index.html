@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1024" />
+  <title>Latens Potentia Systems™</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8B3Y0P333"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W8B3Y0P333');
+</script>
+<!-- SEO -->
+<title>Latens Potentia Systems™ — From Nothing to Absolute Greatness.</title>
+<meta name="description" content="We fix things before anyone else notices they’re broken.">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:title" content="Potentia Systems™ — Unlock Your Hidden Power">
+<meta property="og:description" content="We solve problems the world doesn’t want to talk about. We fix things before anyone else notices they’re broken.">
+<meta property="og:image" content="https://latenslink.co.ke/latenspotentia/assets/img/Picon.png">
+<meta property="og:url" content="https://latenslink.co.ke/latenspotentia">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Latens Potentia Systems™ — From Nothing to Absolute Greatness.">
+<meta name="twitter:description" content="We fix things before anyone else notices they’re broken.">
+<meta name="twitter:image" content="https://latenslink.co.ke/latenspotentia/assets/img/Picon.png">
+
+
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .text-gold { color: #B8860B; }
+    .bg-gold { background-color: #B8860B; }
+    .hover\:shadow-gold:hover { 
+      box-shadow: 0 0 20px #B8860B, 0 0 40px #FFD700;
+    }
+    .gradient-gold {
+      background: linear-gradient(90deg, #B8860B 0%, #FFD700 100%);
+    }
+    .gold-btn {
+      background-color: #B8860B;
+      color: #111;
+      font-weight: 600;
+      border-radius: 9999px;
+      transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+    }
+    .gold-btn:hover {
+      background: linear-gradient(90deg, #B8860B 0%, #FFD700 100%);
+      box-shadow: 0 0 20px #B8860B, 0 0 40px #FFD700;
+      transform: scale(1.04);
+    }
+    /* --- 3D, Parallax, Glow, Glassmorphism, Terminal --- */
+    .scroll-cards {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 2rem;
+      padding: 2.5rem 1rem 2rem 1rem;
+      margin-top: -2rem;
+    }
+    .scroll-card {
+      min-width: 320px;
+      max-width: 90vw;
+      background: rgba(38,42,53,0.90);
+      border-radius: 1.5rem;
+      scroll-snap-align: center;
+      box-shadow: 0 4px 24px 0 rgba(8,20,44,0.22);
+      transition: transform 0.22s cubic-bezier(.27,1.25,.55,1), box-shadow 0.18s;
+      cursor: pointer;
+      backface-visibility: hidden;
+      will-change: transform, box-shadow;
+      border: 1.5px solid rgba(255,255,255,0.08);
+      position: relative;
+      z-index: 1;
+    }
+    .scroll-card:hover {
+      transform: scale(1.045) perspective(700px) rotateY(7deg);
+      box-shadow: 0 8px 36px 0 #FFD70066, 0 2px 32px 0 rgba(0,0,0,0.18);
+      z-index: 2;
+    }
+    .scroll-card .card-content {
+      padding: 2rem 1.5rem;
+      color: #fff;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      transition: text-shadow 0.22s;
+      text-shadow: 0 0 8px #FFD70033;
+    }
+    .scroll-card .card-content code {
+      font-family: 'Fira Mono', 'JetBrains Mono', 'SFMono-Regular', 'Menlo', monospace;
+      background: #161a25;
+      color: #FFD700;
+      border-radius: 0.4em;
+      padding: 0.15em 0.35em;
+      font-size: 1em;
+    }
+    .glass-panel {
+      background: rgba(30,42,54,0.43);
+      border-radius: 1.3rem;
+      border: 1.5px solid rgba(255,255,255,0.16);
+      box-shadow: 0 4px 32px 0 rgba(255,215,0,0.13);
+      backdrop-filter: blur(15px);
+      padding: 2.5rem 2rem;
+      margin: 2.5rem auto;
+      max-width: 680px;
+      position: relative;
+    }
+    .terminal-text {
+      font-family: 'Fira Mono', 'JetBrains Mono', 'SFMono-Regular', 'Menlo', monospace;
+      font-size: 1.08rem;
+      color: #FFD700;
+      letter-spacing: 0.08em;
+      background: linear-gradient(90deg, #101c1e 85%, #1d2235 100%);
+      border-radius: 0.5em;
+      padding: 1.1em;
+      margin: 0.85em 0 0.45em 0;
+      box-shadow: 0 0 10px #FFD70055;
+      border: 1px solid #FFD70033;
+      text-shadow: 0 0 2px #FFD700, 0 0 8px #FFD70033;
+    }
+    .glow {
+      box-shadow: 0 0 24px 5px #FFD70044;
+      background: radial-gradient(circle, #1b2c36 40%, #FFD70022 120%);
+    }
+   /* Parallax Hero - MOBILE OPTIMIZED */
+    .hero-parallax {
+      position: relative;
+      overflow: hidden;
+      min-height: 370px;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(120deg, #070e1e 0%, #151c2a 100%);
+    }
+    .parallax-bg, .parallax-fg {
+  position: absolute;
+  left: 0; top: 0; width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+.parallax-bg {
+  background: url('./assets/img/HeroBg1.jpg') center/cover;
+  opacity: 1.20; /* Note: Opacity > 1 is invalid; browsers clamp to 1. Consider adjusting to 1 or lower if unintended */
+  z-index: 1;
+  transform: translateY(0);
+  transition: transform 0.2s;
+}
+/* Desktop: Switch to landscape image and optimize */
+@media (min-width: 768px) {
+  .parallax-bg {
+    background-image: url('./assets/img/HeroBg1.jpg'); /* Your new landscape image */
+    background-size: cover; /* Fills the wide screen without gaps */
+    background-position: center center; /* Centers the key elements */
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 1280px) {
+  .parallax-bg {
+    background-image: url('./assets/img/HeroBg1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+    
+    .parallax-fg {
+      background: radial-gradient(circle at 70% 30%, #FFD70022 0%, transparent 80%);
+      z-index: 2;
+      transform: translateY(0);
+      transition: transform 0.2s;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .hero-title {
+      font-size: clamp(1.5rem, 6vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -2px;
+      color: #FFD700;
+      text-shadow: 0 0 16px #FFD70099;
+      animation: fadeInUp 1.2s cubic-bezier(.16,1,.31,1.02);
+      margin-bottom: 0.5rem;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(2.5rem);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .cta-glow {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.85rem 2.1rem;
+      font-size: 1.18rem;
+      border-radius: 1.5rem;
+      background: radial-gradient(circle, #FFD700 0%, #B8860B 100%);
+      color: #111;
+      font-weight: 600;
+      box-shadow: 0 0 24px 8px #FFD70055;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: box-shadow 0.18s, transform 0.17s;
+    }
+    .cta-glow:hover {
+      box-shadow: 0 0 48px 16px #FFD70099;
+      transform: scale(1.05);
+    }
+  /*   @media (max-width: 900px) {
+      .hero-title { font-size: clamp(1.1rem, 7vw, 2.0rem); }
+      .hero-content { max-width: 98vw; padding: 0 0.5rem; }
+      .hero-parallax { height: 44vh; min-height: 260px; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: clamp(1rem, 8vw, 1.3rem); }
+      .hero-parallax { height: auto; min-height: 180px; padding: 2.5rem 0; }
+      .hero-content { gap: 0.7rem; }
+    }  */
+
+  /* --- Mobile "zoom out" tweaks --- */
+  @media (max-width: 600px) {
+    body {
+      font-size: 0.95rem;
+    }
+    .hero-content {
+      max-width: 99vw;
+      padding: 0 0.15rem;
+    }
+    .hero-title {
+      font-size: clamp(0.9rem, 7vw, 1.09rem);
+    }
+    section,
+    .glass-panel {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+    .glass-panel {
+      max-width: 99vw;
+      padding: 1.3rem 0.5rem;
+    }
+    .scroll-card {
+      min-width: 240px;
+      max-width: 96vw;
+      padding: 1.2rem 0.7rem;
+    }
+    .card-content {
+      padding: 1.2rem 0.5rem !important;
+    }
+    .gold-btn, .cta-glow {
+      padding: 0.6rem 1.1rem !important;
+      font-size: 1rem !important;
+    }
+    .terminal-text {
+      font-size: 0.89rem;
+      padding: 0.8em;
+    }
+    .grid {
+      gap: 0.8rem;
+    }
+    h2, .text-3xl {
+      font-size: 1.35rem !important;
+    }
+  }
+
+.logo-container {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9999;
+}
+
+.brand-logo {
+  width: 64px;
+  height: auto;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+/* Duplicate for right side button/logo */
+.logo-container-right {
+  position: fixed;
+  top: 1rem;
+  right: 1rem; /* <-- changed */
+  z-index: 9999;
+}
+
+.brand-logo-right {
+  width: 64px;
+  height: auto;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+/* Responsive scaling */
+@media (max-width: 768px) {
+  .brand-logo,
+  .brand-logo-right {
+    width: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo,
+  .brand-logo-right {
+    width: 36px;
+  }
+}
+</style>
+</head>
+<body class="bg-black text-white font-sans">
+
+<!-- Left Logo -->
+<a href="/" class="logo-container">
+  <img src="/latenspotentia/assets/img/Picon.png" alt="Latens Potentia Logo" class="brand-logo" />
+</a>
+
+<!-- Right Logo/Button -->
+<a href="/latenspotentia/PMarket" class="logo-container-right">
+  <img src="/latenspotentia/assets/img/Marketlogo.png" alt="Home" class="brand-logo-right" />
+</a>
+  <!-- Parallax Hero Section -->
+  <section class="hero-parallax">
+    <div class="parallax-bg"></div>
+    <div class="parallax-fg"></div>
+    <div class="hero-content" data-aos="zoom-in">
+      <div class="hero-title">LATENS POTENTIA SYSTEMS</div>
+      <p class="mt-4 text-xl italic text-gray-200">From Nothing to Absolute Greatness.</p>
+      
+      <a href="https://t.me/+txXTXrOnjhg3M2Fk" class="gold-btn px-10 py-3 text-xl shadow-lg hover:shadow-gold transition-all duration-150">Join The Ongoing 90-Day Gameplan</a>
+      <p class="mt-3 text-gray-100 text-sm max-w-lg text-center">A private base where discipline compounds. Your grind isn’t solo — this is a network.<br> We move together. Step into the Potentia community.</p>
+    </div>
+  </section>
+  <!-- Dynamic Scrollable Cards -->
+  <section class="scroll-cards">
+    <div class="scroll-card" data-aos="fade-up">
+      <div class="card-content">
+        <strong>Universe™ Secrets</strong><br>
+        Hourly Secrets From The Universe<br>
+        <small>No cloud. No noise. Just echoes from the cosmic.
+      </small>
+      </div>
+    </div>
+    <div class="scroll-card" data-aos="fade-up" data-aos-delay="80">
+      <div class="card-content">
+        <strong>PotentiaBot™</strong><br>
+        <small>Activate<code>/start</code> Telegram-native delivery system.</small>
+      </div>
+    </div>
+    <div class="scroll-card" data-aos="fade-up" data-aos-delay="160">
+      <div class="card-content">
+        <strong>LatensLink™ v5</strong><br>
+        <small>Lead sourcing engine.<code>./latenslink</code>Filters markets, extracts targets, and activates outreach.</small>
+      </div>
+    </div>
+    <div class="scroll-card" data-aos="fade-up" data-aos-delay="240">
+      <div class="card-content">
+        <strong>Crypto Friendly</strong><br>
+        <small>We help you Bridge into the Digital Economy<br>Dont get left behind</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Brief -->
+  <section id="mission" class="py-16 px-6 md:px-20">
+    <h2 class="text-3xl font-bold text-gold mb-6">What We Do</h2>
+    <p class="mb-4">We solve problems the world doesn’t want to talk about.</p>
+    <p class="mb-4">We fix things before anyone else notices they’re broken.</p>
+    <p class="mb-4">If it needs building, hiding, scaling, launching, deleting, recovering or reimagining — we're already on it.</p>
+    <p class="mt-6 italic text-gray-400">You tell us the mission. We build the System.</p>
+  </section>
+
+  <!-- Capabilities Grid -->
+  <section id="specialties" class="py-16 px-6 md:px-20">
+    <h2 class="text-3xl font-bold text-gold mb-8">We Specialize In</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Systems Built Overnight</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Businesses Revived From The Dead</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Leads Pulled From Thin Air</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Outreach That Closes</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Databases That Think</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Crypto? AI? DeFi? ...We are your bridge to the Future</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Unknown Problems Identified & Handled</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Silence Broken, Brands Heard</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">We Perform Python Sorcery</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Telegram Intelligence... It's Fantastic</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Hidden Goldmines Discovered</div>
+      <div class="border border-gold p-6 rounded-lg hover:shadow-gold transition">Agencies With No Backend… Given One</div>
+    </div>
+  </section>
+
+  <!-- Glassmorphism Vault -->
+  <section id="vault" class="glass-panel glow" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-gold mb-8">Systems Vault</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div>
+        <div class="terminal-text mb-2">$ pkg install latenslink</div>
+        <h3 class="text-xl font-semibold text-gold">LatensLink™ v5</h3>
+        <p class="text-sm text-gray-400 mb-4">Outreach engine. Pull leads from thin air.</p>
+        <a href="https://t.me/Latens_potentia" class="text-gold underline">Deploy via Telegram</a>
+      </div>
+      <div>
+        <div class="terminal-text mb-2">$ ./potentia-bot --intelligence</div>
+        <h3 class="text-xl font-semibold text-gold">Potentia Bot</h3>
+        <p class="text-sm text-gray-400 mb-4">File intelligence. Store, serve, sync.</p>
+        <a href="https://t.me/Latens_potentia" class="text-gold underline">View Bot</a>
+      </div>
+      <div>
+        <div class="terminal-text mb-2">$ curl -O unlock-protocol.pdf</div>
+        <h3 class="text-xl font-semibold text-gold">Unlock Protocol</h3>
+        <p class="text-sm text-gray-400 mb-4">Alignment doc. PDF drop.</p>
+        <a href="https://t.me/Latens_potentia" class="text-gold underline">Download via TG</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Telegram HQ -->
+  <section id="hq" class="py-16 text-center">
+    <h2 class="text-3xl font-bold text-gold mb-4">Telegram HQ</h2>
+    <p class="text-gray-400 mb-6">All systems live. Telegram is Home</p>
+    <a href="https://t.me/Latens_potentia" class="px-6 py-3 gold-btn glow">Enter the Control Room</a>
+  </section>
+
+  <!-- Recruitment Signal -->
+  <section id="recruitment" class="py-16 px-6 md:px-20">
+    <h2 class="text-3xl font-bold text-gold mb-6">Do you have what it takes? To Defy Limits?</h2>
+    <p class="text-gray-400 mb-4">Closer. Red Team. Script kiddie.</p>
+    <p class="text-gray-400 mb-4">If you operate in silence, build in darkness, and dream in systems — you belong here.</p>
+    <a href="https://t.me/Latens_potentia" class="text-gold underline">I Want In</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-gray-400">
+    <p>&copy; 2025 Latens Potentia Systems</p>
+    <p>Unlock Your Hidden Power</p>
+    <p><a href="mailto:admin@latenslink.co.ke" class="text-gold underline">chief@latenslink.co.ke</a></p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Parallax effect for hero section
+    window.addEventListener('scroll', function() {
+      const scrolled = window.scrollY;
+      document.querySelector('.parallax-bg').style.transform = `translateY(${scrolled * 0.18}px)`;
+      document.querySelector('.parallax-fg').style.transform = `translateY(${scrolled * 0.28}px)`;
+    });
+    // AOS scroll animation
+    AOS.init({ once:true, duration:760 });
+
+    // Perspective tilt on card hover
+    document.querySelectorAll('.scroll-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 20;
+        const rotateX = ((y / rect.height) - 0.5) * -12;
+        card.style.transform = `scale(1.045) perspective(700px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+        card.style.zIndex = 2;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+        card.style.zIndex = 1;
+      });
+    });
+  </script>
+</body>
+</html>

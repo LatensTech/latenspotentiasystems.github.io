@@ -1,0 +1,92 @@
+{
+  "categories": [
+    {"key": "scripts", "label": "🛠 Scripts"},
+    {"key": "guides", "label": "📚 Guides"},
+    {"key": "systems", "label": "⚡ Systems"},
+    {"key": "bots", "label": "👾 Bots"},
+    {"key": "Services", "label": "✨ Services"}
+  ],
+  "drops": [
+    {
+      "id": "termux_install",
+      "title": "Termux – Quick Install",
+      "category": "guides",
+      "free": true,
+      "teaser": "Android to Dev console in 3 mins. Zero friction.",
+      "file_url": "https://f-droid.org/repo/com.termux_1022.apk",
+      "learn_more": "https://latenslink.co.ke/latenspotentia/PMarket/files/Termux_Installation.pdf"
+    },
+    {
+      "id": "universe.zip",
+      "title": "Universe Script",
+      "category": "scripts",
+      "free": true,
+      "teaser": "Hourly ‘universe secrets’ via notifications.",
+      "repo_url": "https://github.com/LatensTech/universe",
+      "install_snippet": "git clone https://github.com/LatensTech/universe && cd universe && bash install.sh",
+      "file_url": "https://latenslink.co.ke//latenspotentia/drops/files/universe.zip",
+      "learn_more": "https://latenslink.co.ke/latenspotentia/PMarket/files/Deploy_the_Universe.pdf"
+    },
+    {
+      "id": "Potentia_code",
+      "title": "Potentia Code of Ops",
+      "category": "guides",
+      "free": true,
+      "teaser": "How we move. Quiet build. Loud results.",
+      "file_url": "https://latenslink.co.ke/latenspotentia/PMarket/files/Potentia_Code.pdf"
+    },
+    {
+      "id": "student_pdf_toolkit",
+      "title": "Student PDF Toolkit",
+      "category": "systems",
+      "free": false,
+      "price": 499,
+      "currency": "KES",
+      "teaser": "Merge, split, compress, brand. Assignment-ready in 60s.",
+      "buy_link": "https://latenslink.co.ke/latenspotentia/PMarket/payments.html"
+    },
+    {
+      "id": "nav_the_market",
+      "title": "How to Navigate the Market",
+      "category": "guides",
+      "free": true,
+      "teaser": "Where you shop for Power and get control back.",
+      "file_url": "https://latenslink.co.ke/latenspotentia/PMarket/files/Navigating_the_Potentia_Market.pdf"
+    },
+    {
+      "id": "understand_potentia",
+      "title": "Understanding The Potentia System",
+      "category": "guides",
+      "free": true,
+      "teaser": "Power, Control, Systems, Simplicity",
+      "file_url": "https://latenslink.co.ke/latenspotentia/PMarket/files/Understanding_Potentia.pdf"
+    },
+    {
+      "id": "btcwatch.zip",
+      "title": "BITCOIN WATCHER — NEW DROP",
+      "category": "scripts",
+      "free": true,
+      "teaser": "A stealth node that logs Bitcoin price every hour. Deploy in Termux. No backend. No gatekeepers. Just signal.",
+      "file_url": "https://latenslink.co.ke/latenspotentia/PMarket/files/btcwatch.zip"
+    },
+    {
+      "id": "pdftool.zip",
+      "title": "POTENTIA PDF TOOL — Your documents, your rules",
+      "category": "scripts",
+      "free": true,
+      "teaser": "Convert, merge, split & compress PDFs offline. Branded, clean, and 100% yours. Runs in Termux, Gives you back Control.",
+      "file_url": "https://latenslink.co.ke/latenspotentia/PMarket/files/pdftool.zip"
+    },
+    {
+      "id": "potentia_session.html",
+      "title": "POTENTIA SESSION — Learn What Matters, Fast",
+      "category": "services",
+      "free": false,
+      "teaser": "One-on-one, action-first learning in AI, Tech, Crypto & more. Your own human ChatGPT, on call.",
+      "buy_link": "https://latenslink.co.ke/latenspotentia/PMarket/Psession.html"
+    }
+
+
+    
+  ]
+}
