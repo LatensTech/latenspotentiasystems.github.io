@@ -1,4 +1,5 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://latenslink.co.ke/sitemap.xml
+# Sitemap for this subdomain
+Sitemap: https://latenspotentia.latenslink.co.ke/sitemap.xml
